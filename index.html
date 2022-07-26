@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <style>
+        html,
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .navbar{
+            width: 100%;
+            height: 2.5rem;
+            padding: .2rem;
+            background-color: #111;
+            color: #cacaca;
+
+            display: flex;
+            align-items: center;
+        }
+        .navbar-title{
+            margin-left: .5rem;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-title">Home</div>
+    </div>
+    <div class="container"></div>
+
+
+    <script src="main.js"></script>
+    <script>
+
+
+        function MainElement(tagname="div", classname=null, id=null, children=[], style={}, textcontent=null){
+            return {
+                "tagName": tagname,
+                "config": {
+                    "className": classname,
+                    "id": id,
+                    "textContent": textcontent
+                },
+                "style": style,
+                "children": children,
+            }
+        }
+
+        function RectButton(icon_name = "", label_name = ""){
+            const fa_icon = MainElement("i", icon_name, null, [], {}, null)
+            const icon = MainElement("div", "rect-btn-icon", null, [fa_icon], {}, null)
+            const label = MainElement("div", "rect-btn-label", null, [], {}, label_name)
+            const button = MainElement("div", "rect-btn", null, [icon, label], {
+                width: "5rem",
+                height: "5rem",
+                backgroundColor: "#111"
+
+            }, null)
+            
+            return button
+        }      
+         
+        function init(){
+            const btn = RectButton("fas fa-envelope", "mail")
+            console.log(btn)
+        }
+
+        window.onload = init();
+    </script>
+</body>
+</html>
