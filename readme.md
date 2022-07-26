@@ -6,7 +6,7 @@ With the build function in the main.js file you are able to build html pages, ba
 
 # Example:
 ----------
-```JSON
+```js
 [
     {
         tagName: "div",
